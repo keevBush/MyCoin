@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoinServerData", "MyCoinServerData\MyCoinServerData.csproj", "{91682697-7059-4C3F-831C-130ACF47D0E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCoinServer", "MyCoinServer\MyCoinServer.csproj", "{15D5841A-1BFB-4A94-AC6E-B2400ADD8A85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{91682697-7059-4C3F-831C-130ACF47D0E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91682697-7059-4C3F-831C-130ACF47D0E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91682697-7059-4C3F-831C-130ACF47D0E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15D5841A-1BFB-4A94-AC6E-B2400ADD8A85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15D5841A-1BFB-4A94-AC6E-B2400ADD8A85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15D5841A-1BFB-4A94-AC6E-B2400ADD8A85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15D5841A-1BFB-4A94-AC6E-B2400ADD8A85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
