@@ -55,8 +55,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\LatestTransactions.xaml.cs">
+      <DependentUpon>LatestTransactions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Login.xaml.cs">
       <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserListActif.xaml.cs">
+      <DependentUpon>UserListActif.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -70,7 +76,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\LatestTransactions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\UserListActif.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -102,13 +116,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Ressources\" />
     <Folder Include="ViewModels\" />
+    <Folder Include="Views\Prototypes\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes">
       <Version>2.5.0.1205</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\LeftTranfert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Down.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

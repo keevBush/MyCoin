@@ -5,13 +5,46 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCoinServer"
         mc:Ignorable="d"
+        xmlns:Views="clr-namespace:MyCoinServer.Views"
         Title="MainWindow" Height="450" Width="800">
     <ScrollViewer>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Grid Background="BlueViolet">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Administrateur" Foreground="White" FontSize="17" FontWeight="DemiBold" />
+                <Grid Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Height="30" Source="Ressources/User.png"/>
+                    <Label Content="Username" Foreground="White" FontWeight="DemiBold" Grid.Column="1" VerticalContentAlignment="Center"/>
+                </Grid>
+              
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid>
+                    <Views:UserListActif/>
+                </Grid>
+                <Grid Width="250" Grid.Column="1">
+                    <Views:LatestTransactions/>
+                </Grid>
+            </Grid>
+           
         </Grid>
     </ScrollViewer>
 </Window>

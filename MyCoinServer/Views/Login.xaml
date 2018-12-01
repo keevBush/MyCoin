@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCoinServer.Views"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="Login" Height="450" Width="300">
     <Grid>
         <Grid.RowDefinitions>
@@ -17,6 +18,19 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Content="Connexion" FontSize="18" FontWeight="DemiBold" HorizontalAlignment="Center" HorizontalContentAlignment="Center"/>
+            <Image Grid.Row="1" Source="../Ressources/Coins.png" VerticalAlignment="Center" Height="60"/>
+        </Grid>
+        <Grid Grid.Row="1" Margin="20 20 20 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+
+            </Grid.RowDefinitions>
+            <TextBox materialDesign:HintAssist.Hint="Username" materialDesign:HintAssist.IsFloating="True"/>
+            <PasswordBox Grid.Row="1" materialDesign:HintAssist.Hint="Mot de passe" materialDesign:HintAssist.IsFloating="True"/>
+            <Button Content="Connexion" Grid.Row="3" Margin="0 0 0 20"/>
         </Grid>
     </Grid>
 </Window>
