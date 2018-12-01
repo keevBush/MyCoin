@@ -14,28 +14,39 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Label Content="Les dernière transactions" FontWeight="DemiBold" HorizontalAlignment="Center" />
+            <Label FontSize="14" Content="Les dernière transactions" FontWeight="DemiBold" HorizontalAlignment="Center" />
             <ScrollViewer Grid.Row="1">
                 <StackPanel >
                     <materialDesign:Card Background="#3a56d1" Margin="0 10">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="*"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Label Content="Libelé" FontWeight="DemiBold" Foreground="White"/>
-                            <Grid Grid.Row="1">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label HorizontalContentAlignment="Center" Content="User 1" Foreground="White" FontWeight="DemiBold"/>
+                                <Image Grid.Column="1" Margin="20 0 0 0" Source="../Ressources/LeftTranfert.png" Height="20" Width="20"/>
+                                <Label HorizontalContentAlignment="Center" Grid.Column="2" Foreground="White" FontWeight="DemiBold" Content="User 2"/>
+                        </Grid>
+                        <Label Grid.Row="1" Content="Libelé" FontWeight="DemiBold" Foreground="White"/>
+                            <Grid Grid.Row="2">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image Margin="20 0 0 0" Source="../Ressources/LeftTranfert.png" Height="20" Width="20"/>
-                                <Label Grid.Column="1" Content="1500 $" Foreground="White" FontWeight="DemiBold" HorizontalContentAlignment="Right" Margin="0 0 20 0"/>
+                                <Label Grid.Column="1" Content="1500 $" Foreground="White" FontWeight="DemiBold" FontSize="18" HorizontalContentAlignment="Right" Margin="0 0 20 0"/>
                             </Grid>
-                            <Label Grid.Row="2" Content="15cdfdy324bjh4343b%chsvc" Foreground="White" FontWeight="DemiBold"/>
-                            <Label HorizontalContentAlignment="Right" Grid.Row="3" Content="12/12/2018 17:00:00" Foreground="White" FontWeight="DemiBold"/>
+                            <Label Grid.Row="3" Content="15cdfdy324bjh4343b%chsvc" Foreground="White" FontWeight="DemiBold"/>
+                            <Label HorizontalContentAlignment="Right" Grid.Row="4" Content="12/12/2018 17:00:00" Foreground="White" FontWeight="DemiBold"/>
                         </Grid>
                     </materialDesign:Card>
                     <materialDesign:Card Background="BlueViolet" Margin="0 10">
@@ -53,7 +64,7 @@
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
                                 <Image Margin="20 0 0 0" Source="../Ressources/Down.png" Height="20" Width="20"/>
-                                <Label Grid.Column="1" Content="1500 $" Foreground="White" FontWeight="DemiBold" HorizontalContentAlignment="Right" Margin="0 0 20 0"/>
+                                <Label Grid.Column="1" Content="1500 $" FontSize="18" Foreground="White" FontWeight="DemiBold" HorizontalContentAlignment="Right" Margin="0 0 20 0"/>
                             </Grid>
                             <Label Grid.Row="2" Content="15cdfdy324bjh4343b%chsvc" Foreground="White" FontWeight="DemiBold"/>
                             <Label HorizontalContentAlignment="Right" Grid.Row="3" Content="12/12/2018 17:00:00" Foreground="White" FontWeight="DemiBold"/>
