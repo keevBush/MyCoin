@@ -1,31 +1,33 @@
 ﻿using System;
+using Newtonsoft.Json;
 
 namespace MyCoinServerData.Models
 {
-    using Newtonsoft.Json;
 
     public class Transaction
     {
-        [JsonProperty("id")]
+        [JsonProperty("id")]//Id de la transaction
         public int Id { get; set; }
         [JsonProperty("public_key_dest")]
-        public string PublcKeyDest { get; set; }
+        public string PublcKeyDest { get; set; }//Key de Destination
+        [JsonProperty("public_key_dest")]
+        public string PublcProvKey { get; set; }//Key de provenance
         [JsonProperty("type")]
-        public Type Type { get; set; }
+        public Type Type { get; set; }//le type de transfert
         [JsonProperty("etat")]
-        public Etat Etat { get; set; }
+        public Etat Etat { get; set; }//l'etat du transfert
         [JsonProperty("value")]
-        public double Value { get; set; }
+        public double Value { get; set; }//la valeur du transfert
 
         private string _signature;
         [JsonProperty("signature")]
-        public string Signature
+        public string Signature //Signature de la transaction
         {
             get
             {
                 return this._signature;
             }
-            set
+            private set
             {
                 HashSignature();
                 this._signature = value;
@@ -38,11 +40,11 @@ namespace MyCoinServerData.Models
         }
     }
     public enum Type {
-
+        Dépot,Transfert
     }
 
     public enum Etat
     {
-
+        Encours,Effectuer,Annuler 
     }
 }
