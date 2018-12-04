@@ -5,10 +5,11 @@ using  Newtonsoft.Json;
 
 namespace MyCoinServerData.Models
 {
+    [JsonObject]
     public class User
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [JsonProperty("user_name")]
         public string Username { get; set; }
         [JsonProperty("password")]
@@ -19,5 +20,10 @@ namespace MyCoinServerData.Models
         public bool State { get; set; }
         [JsonProperty("date_creation")]
         public DateTime DateCreation { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Id} {this.Username} {this.Password} {this.Sold} {this.DateCreation}";
+        }
     }
 }

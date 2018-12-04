@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="MyCoinServer.Views.ProfilUser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyCoinServer.Views"
+             mc:Ignorable="d" 
+             Background="White"
+             xmlns:prototype="clr-namespace:MyCoinServer.Views.Prototypes"
+             d:DesignHeight="400" d:DesignWidth="700">
+    <Grid>
+         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+
+        </Grid.RowDefinitions>
+        <Grid Margin="10 10 0 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Image Source="../Ressources/User.png"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+
+                </Grid.ColumnDefinitions>
+                <Label Content="Public Key : " FontWeight="Black"/>
+                <Label Grid.Column="0" Content="Username : " Grid.Row="1" FontWeight="Black"/>
+                <Label Grid.Column="0" Content="Solde : " Grid.Row="2" FontWeight="Black"/>
+                <Label Grid.Column="0" Content="Date de creation : " Grid.Row="3" FontWeight="Black"/>
+                <Label Content="12cdj-dsbhe6-2387bd-cnuih" Grid.Column="1" FontWeight="DemiBold"/>
+                <Label Grid.Column="1" Content="keevBush" Grid.Row="1" FontWeight="DemiBold"/>
+                <Label Grid.Column="1" Content="1200 $" Grid.Row="2" FontWeight="DemiBold"/>
+                <Label Grid.Column="1" Content="12/12/2017 12:00:000" Grid.Row="3" FontWeight="DemiBold"/>
+            </Grid>
+            <Grid Grid.Column="2" Margin="0 0 10 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Button IsEnabled="False" Content="Accepter" Foreground="White" Background="Green" Height="35"/>
+                <Button Content="Retirer" Foreground="White" Background="Red" Height="35" Grid.Row="1"/>
+            </Grid>
+        </Grid>
+        <Label Grid.Row="1"  Content="Les transactions" FontSize="16" FontWeight="DemiBold"/>
+        <ScrollViewer Padding="0 0 10 0" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden" Grid.Row="2">
+            <WrapPanel Margin="5 0" VerticalAlignment="Center" Grid.Row="2" Orientation="Horizontal">
+                <prototype:PrototypeTransaction/>
+                <prototype:PrototypeTransaction/>
+                <prototype:PrototypeTransaction/>
+                <prototype:PrototypeTransaction/>
+                <prototype:PrototypeTransaction/>
+            </WrapPanel>
+        </ScrollViewer>
+        
+        <Border Margin="10 0" Grid.Row="3" Background="DimGray" Height="1"/>
+        <Grid Grid.Row="4" Margin="10 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Solde" FontWeight="DemiBold" FontSize="17"/>
+            <Label Content="120 $" Grid.Column="1" HorizontalContentAlignment="Right" FontWeight="DemiBold" FontSize="17"/>
+        </Grid>
+    </Grid>
+</UserControl>

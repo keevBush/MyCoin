@@ -13,5 +13,12 @@ namespace MyCoinServerData.IData
         void UpdateItem(T item);
 
         void DeleteItem(T item);
+
+        string Serialize(T item);
+
+        List<T> DeserializeList(string value);
+
+        T DeserializeObject(string value);
+
     }
 }
