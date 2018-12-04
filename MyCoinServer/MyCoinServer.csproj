@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\QuerryImplementation.cs" />
     <Compile Include="Views\LatestTransactions.xaml.cs">
       <DependentUpon>LatestTransactions.xaml</DependentUpon>
     </Compile>

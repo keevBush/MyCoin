@@ -2,6 +2,8 @@
 
 namespace MyCoinServerData
 {
+    using System.Collections.Generic;
+
     using MyCoinServerData.DAO;
     using MyCoinServerData.Models;
 
@@ -18,7 +20,14 @@ namespace MyCoinServerData
                                 State = true,
                                 Username = "myUserName"
                             };
-            var values = new UserDAO ().Mapper();
+            
+            var values = new UserDAO().Serialize(new List<User>(){user,user,user});
+            var data = new UserDAO().DeserializeList(values);
+            foreach (var d in data)
+            {
+                Console.WriteLine($"{d}");
+            }
+            Console.WriteLine("----------------------------------");
             Console.WriteLine(values);
             Console.ReadKey();
         }
