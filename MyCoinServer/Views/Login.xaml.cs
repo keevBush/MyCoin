@@ -22,6 +22,7 @@ namespace MyCoinServer.Views
         public Login()
         {
             InitializeComponent();
+            int a = 0;
         }
     }
 }
