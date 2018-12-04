@@ -46,7 +46,9 @@ namespace MyCoinServerData.DAO
             }
         }
 
-        public string Serialize(User item)
+        
+
+        public string Serialize(object item)
         {
             var json = JsonConvert.SerializeObject(item);
             return json;
