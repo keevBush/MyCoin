@@ -150,5 +150,11 @@
   <ItemGroup>
     <Resource Include="Ressources\Down.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyCoinData\MyCoinData.csproj">
+      <Project>{c8aac2ce-f690-45b7-9313-9934716592d0}</Project>
+      <Name>MyCoinData</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
