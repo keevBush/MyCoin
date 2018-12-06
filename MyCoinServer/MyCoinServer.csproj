@@ -57,6 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="Services\QuerryImplementation.cs" />
     <Compile Include="Services\RealTimeServices.cs" />
+    <Compile Include="ViewModels\DelegateCommand.cs" />
+    <Compile Include="ViewModels\LatestTransactionViewModel.cs" />
     <Compile Include="Views\LatestTransactions.xaml.cs">
       <DependentUpon>LatestTransactions.xaml</DependentUpon>
     </Compile>
@@ -131,12 +133,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes">
       <Version>2.5.0.1205</Version>
+    </PackageReference>
+    <PackageReference Include="MvvmEventBinding">
+      <Version>1.0.0</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

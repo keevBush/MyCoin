@@ -21,9 +21,9 @@ namespace MyCoinData.Models
         [JsonProperty("date_creation")]
         public DateTime DateCreation { get; set; }
 
-        public override string ToString()
-        {
-            return $"{this.Id} {this.Username} {this.Password} {this.Sold} {this.DateCreation}";
-        }
+        //public override string ToString()
+        //{
+        //    return $"{this.Id} {this.Username} {this.Password} {this.Sold} {this.DateCreation}";
+        //}
     }
 }

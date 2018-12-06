@@ -6,57 +6,46 @@
              xmlns:local="clr-namespace:MyCoinServer.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d"
+             xmlns:mvvm="clr-namespace:MvvmEventBinding;assembly=MvvmEventBinding"
              Background="White"
+             xmlns:viewModel="clr-namespace:MyCoinServer.ViewModels"
              d:DesignHeight="450" d:DesignWidth="400">
+    
+    <!--C'est les demandes-->
+   
     <ScrollViewer>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Label Content="Demandes d'inscription" HorizontalContentAlignment="Center" FontWeight="DemiBold" FontSize="14"/>
-        <StackPanel Grid.Row="1" Margin="7">
-            <materialDesign:Card Padding="5" >
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Content="@" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
-                    <Label Grid.Column="1" FontWeight="Bold" Content="username" VerticalContentAlignment="Center"/>
-                    
-                    <Grid Grid.Column="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Button Background="Green" Foreground="White" Margin="10 0 5 0" Content="Accepter"/>
-                        <Button Grid.Column="1" BorderThickness="0" Margin="5 0 10 0" BorderBrush="Transparent" Background="Red" Foreground="White" Content="Refuser"/>
-                    </Grid>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card Padding="5"  Margin="0 5">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="Auto"/>
-                    </Grid.ColumnDefinitions>
-                    <Label Content="@" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
-                    <Label Grid.Column="1" FontWeight="Bold" Content="username" VerticalContentAlignment="Center"/>
-
-                    <Grid Grid.Column="2">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Button Background="Green" Foreground="White" Margin="10 0 5 0" Content="Accepter"/>
-                        <Button Grid.Column="1" BorderThickness="0" Margin="5 0 10 0" BorderBrush="Transparent" Background="Red" Foreground="White" Content="Refuser"/>
-                    </Grid>
-                </Grid>
-            </materialDesign:Card>
-            </StackPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Demandes d'inscription" HorizontalContentAlignment="Center" FontWeight="DemiBold" FontSize="14"/>
+            <ListView x:Name="lstViewInscriptions" ItemsSource="{Binding Path=LstActifUsers}" Grid.Row="1" Margin="7">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <materialDesign:Card Padding="5" >
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Content="@" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
+                                <Label Grid.Column="1" FontWeight="Bold" Content="username" VerticalContentAlignment="Center"/>
+                                <Grid Grid.Column="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Button Background="Green" Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                AncestorType={x:Type ListView}}, Path=DataContext.AddUserCommand}" CommandParameter="{Binding}" Foreground="White" Margin="10 0 5 0" Content="Accepter"/>
+                                    <Button Grid.Column="1" BorderThickness="0" Margin="5 0 10 0" BorderBrush="Transparent" Background="Red" Foreground="White" Content="Refuser"/>
+                                </Grid>
+                            </Grid>
+                        </materialDesign:Card>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+             </ListView>
         </Grid>
     </ScrollViewer>
 </UserControl>
