@@ -23,6 +23,7 @@ namespace MyCoinServer.Views
         public UserListActif()
         {
             InitializeComponent();
+            DataContext=new ViewModels.LatestTransactionViewModel();
         }
     }
 }
