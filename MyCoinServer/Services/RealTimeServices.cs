@@ -8,12 +8,14 @@ namespace MyCoinServer.Services
 {
     using System.Threading;
 
+    using MyCoinData.IData;
+
     public class RealTimeServices
     {
         public static Thread CheckConnexionThread = new Thread(
             (t) =>
                 {
-
+                    
                 });
         public static Thread CheckInscrptionThread = new Thread(
             (t) =>
