@@ -6,77 +6,115 @@
         xmlns:local="clr-namespace:MyCoinServer"
         mc:Ignorable="d"
         xmlns:Views="clr-namespace:MyCoinServer.Views"
-        Title="MainWindow" Height="450" Width="800">
-    <ScrollViewer>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="450" Width="800" WindowStyle="None">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Grid Background="BlueViolet">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="Auto"/>
-                </Grid.ColumnDefinitions>
-                <Label Content="Administrateur" VerticalContentAlignment="Center" Foreground="White" FontSize="17" FontWeight="DemiBold" />
-                <Grid Grid.Column="2">
+            <materialDesign:Card  Background="BlueViolet" Margin="0 0 0 5" UniformCornerRadius="0">
+                <Grid PreviewMouseLeftButtonDown="UIElement_OnPreviewMouseLeftButtonDown">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Image Height="40" Source="Ressources/User.png"/>
-                    <Label Content="Username" Foreground="White" FontWeight="DemiBold" Grid.Column="1" VerticalContentAlignment="Center"/>
+                    <materialDesign:PopupBox Grid.Column="1" Foreground="White" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                        <StackPanel>
+                            <Button Content="Goodbye" />
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                    <Grid Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Administrateur" VerticalContentAlignment="Center" Foreground="White" FontSize="17" FontWeight="DemiBold" />
+                        <Grid Grid.Column="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Height="40" Source="Ressources/User.png"/>
+                            <Label Content="Username" Foreground="White" FontWeight="DemiBold" Grid.Column="1" VerticalContentAlignment="Center"/>
+                            
+                        </Grid>
+                        
+                    </Grid>
                 </Grid>
-              
-            </Grid>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="0.5*"/>
-                </Grid.ColumnDefinitions>
-                <Grid>
-                    <Views:UserListActif/>
+                
+            </materialDesign:Card>
+            
+        <ScrollViewer Grid.Row="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+               
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Views:UserListActif/>
+                    </Grid>
+                    <Grid  Grid.Column="1">
+                        <Views:LatestTransactions/>
+                    </Grid>
+                    <Grid  Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Détails sur les utilisateurs" FontWeight="DemiBold" FontSize="14" />
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Label FontSize="15" Content="Utilisateurs total:"/>
+                            <Label FontSize="15" Content="Utilisateurs connecté:  " Grid.Row="1"/>
+                            <Label FontSize="15" Content="Invitations:  " Grid.Row="2"/>
+                            <Label FontSize="15" Content="12" FontWeight="DemiBold" Grid.Column="1" HorizontalContentAlignment="Left"/>
+                            <Label FontSize="15" Content="5" FontWeight="DemiBold" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Left"/>
+                            <Label FontSize="15" Content="2" FontWeight="DemiBold" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Left"/>
+                        </Grid>
+                    </Grid>
                 </Grid>
-                <Grid  Grid.Column="1">
-                    <Views:LatestTransactions/>
-                </Grid>
-                <Grid  Grid.Column="2">
+                <Grid Grid.Row="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    <Label Content="Détails sur les utilisateurs" FontWeight="DemiBold" FontSize="14" />
-                    <Grid Grid.Row="1">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                            <RowDefinition Height="Auto"/>
-                        </Grid.RowDefinitions>
-                        <Label FontSize="15" Content="Utilisateurs total:"/>
-                        <Label FontSize="15" Content="Utilisateurs connecté:  " Grid.Row="1"/>
-                        <Label FontSize="15" Content="Invitations:  " Grid.Row="2"/>
-                        <Label FontSize="15" Content="12" FontWeight="DemiBold" Grid.Column="1" HorizontalContentAlignment="Left"/>
-                        <Label FontSize="15" Content="5" FontWeight="DemiBold" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Left"/>
-                        <Label FontSize="15" Content="2" FontWeight="DemiBold" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Left"/>
-                    </Grid>
+                    <Label Content="Tout les utilisateurs" HorizontalContentAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+                    <Views:AllUsers Grid.Row="1"/>
                 </Grid>
+                
             </Grid>
-           <Grid Grid.Row="2">
-               <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                   <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-               <Label Content="Tout les utilisateurs" HorizontalContentAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
-               <Views:AllUsers Grid.Row="1"/>
-           </Grid>
-        </Grid>
-    </ScrollViewer>
+        </ScrollViewer>
+        <Label Grid.Row="2" HorizontalContentAlignment="Center" FontSize="15" >
+            <TextBlock>
+                <Run Text="My coin by"/>
+                <Run FontWeight="DemiBold" Text="Kasinde Melissa"/>
+                <Run FontWeight="DemiBold" Text="Bushiri Kevin"/>
+                <Run FontWeight="DemiBold" Text="Maloba Carlos"/>
+                <Run FontWeight="DemiBold" Text="Grace"/>
+            </TextBlock>
+        </Label>
+    </Grid>
+        
+    
 </Window>

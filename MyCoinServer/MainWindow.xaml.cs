@@ -24,5 +24,10 @@ namespace MyCoinServer
         {
             InitializeComponent();
         }
+
+        private void UIElement_OnPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
