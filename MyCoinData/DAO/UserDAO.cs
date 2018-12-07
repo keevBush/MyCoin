@@ -25,7 +25,11 @@ namespace MyCoinData.DAO
 
         public void DeleteItem(User item)
         {
-            throw new NotImplementedException();
+            using (var db = new LiteDatabase(@"DataBase.db"))
+            {
+                var users = db.GetCollection<User>("Users");
+                users.Delete(u=>u.Id.Equals(item.Id));
+            }
         }
 
         public void NewItem(User item)
@@ -43,6 +47,7 @@ namespace MyCoinData.DAO
             {
                 var users = db.GetCollection<User>("Users");
                 users.Update(new BsonValue(item.Id), item);
+               
             }
         }
 

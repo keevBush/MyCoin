@@ -12,6 +12,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid Background="BlueViolet">
                 <Grid.ColumnDefinitions>
@@ -35,7 +36,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="0.5*"/>
-                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="0.5*"/>
                 </Grid.ColumnDefinitions>
                 <Grid>
                     <Views:UserListActif/>
@@ -59,16 +60,23 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
-                        <Label Content="Utilisateurs total:"/>
-                        <Label Content="Utilisateurs connecté:  " Grid.Row="1"/>
-                        <Label Content="Invitations:  " Grid.Row="2"/>
-                        <Label Content="12" Grid.Column="1" HorizontalContentAlignment="Left"/>
-                        <Label Content="5" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Left"/>
-                        <Label Content="2" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Left"/>
+                        <Label FontSize="15" Content="Utilisateurs total:"/>
+                        <Label FontSize="15" Content="Utilisateurs connecté:  " Grid.Row="1"/>
+                        <Label FontSize="15" Content="Invitations:  " Grid.Row="2"/>
+                        <Label FontSize="15" Content="12" FontWeight="DemiBold" Grid.Column="1" HorizontalContentAlignment="Left"/>
+                        <Label FontSize="15" Content="5" FontWeight="DemiBold" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Left"/>
+                        <Label FontSize="15" Content="2" FontWeight="DemiBold" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Left"/>
                     </Grid>
                 </Grid>
             </Grid>
-           
+           <Grid Grid.Row="2">
+               <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                   <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+               <Label Content="Tout les utilisateurs" HorizontalContentAlignment="Center" FontSize="15" FontWeight="DemiBold"/>
+               <Views:AllUsers Grid.Row="1"/>
+           </Grid>
         </Grid>
     </ScrollViewer>
 </Window>

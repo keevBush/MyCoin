@@ -20,29 +20,34 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Label Content="Demandes d'inscription" HorizontalContentAlignment="Center" FontWeight="DemiBold" FontSize="14"/>
-            <ListView x:Name="lstViewInscriptions" ItemsSource="{Binding Path=LstActifUsers}" Grid.Row="1" Margin="7">
+            <ListView x:Name="lstViewInscriptions" HorizontalContentAlignment="Stretch" ItemsSource="{Binding Path=LstActifUsers}" Grid.Row="1" Margin="7">
                 <ListView.ItemTemplate >
-                    <DataTemplate>
-                        <materialDesign:Card Padding="5" >
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
-                                    <ColumnDefinition Width="*"/>
-                                    <ColumnDefinition Width="Auto"/>
-                                </Grid.ColumnDefinitions>
-                                <Label Content="@" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
-                                <Label Grid.Column="1" FontWeight="Bold" Content="username" VerticalContentAlignment="Center"/>
-                                <Grid Grid.Column="2">
+                    <DataTemplate >
+                        <Grid >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:Card Padding="5"  >
+                                <Grid>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
                                         <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
                                     </Grid.ColumnDefinitions>
-                                    <Button Background="Green" Command="{Binding RelativeSource={RelativeSource FindAncestor, 
-                                AncestorType={x:Type ListView}}, Path=DataContext.AddUserCommand}" CommandParameter="{Binding}" Foreground="White" Margin="10 0 5 0" Content="Accepter"/>
-                                    <Button Grid.Column="1" BorderThickness="0" Margin="5 0 10 0" BorderBrush="Transparent" Background="Red" Foreground="White" Content="Refuser"/>
+                                    <Label Content="@" VerticalAlignment="Center" FontWeight="Bold" HorizontalAlignment="Right"/>
+                                    <Label Grid.Column="1" FontWeight="Bold" Content="{Binding Username}" VerticalContentAlignment="Center"/>
+                                    <Grid Grid.Column="2">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Button Background="Green" Command="{Binding RelativeSource={RelativeSource FindAncestor, 
+                                        AncestorType={x:Type ListView}}, Path=DataContext.AddUserCommand}" CommandParameter="{Binding}" Foreground="White" Margin="10 0 5 0" Content="Accepter"/>
+                                        <Button Grid.Column="1" BorderThickness="0" Margin="5 0 10 0" BorderBrush="Transparent" Background="Red" Foreground="White" Content="Refuser"/>
+                                    </Grid>
                                 </Grid>
-                            </Grid>
-                        </materialDesign:Card>
+                            </materialDesign:Card>
+                        </Grid>
                     </DataTemplate>
                 </ListView.ItemTemplate>
              </ListView>

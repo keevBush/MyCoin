@@ -55,10 +55,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ModelsRefactored\TransactionR.cs" />
     <Compile Include="Services\QuerryImplementation.cs" />
     <Compile Include="Services\RealTimeServices.cs" />
+    <Compile Include="ViewModels\AllUserViewModel.cs" />
     <Compile Include="ViewModels\DelegateCommand.cs" />
     <Compile Include="ViewModels\LatestTransactionViewModel.cs" />
+    <Compile Include="Views\AllUsers.xaml.cs">
+      <DependentUpon>AllUsers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LatestTransactions.xaml.cs">
       <DependentUpon>LatestTransactions.xaml</DependentUpon>
     </Compile>
@@ -86,6 +91,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\AllUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LatestTransactions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
