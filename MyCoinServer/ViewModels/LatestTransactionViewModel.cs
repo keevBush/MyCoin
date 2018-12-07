@@ -28,10 +28,12 @@ namespace MyCoinServer.ViewModels
                                {
                                    new User()
                                        {
+                                           Username = "username 1",
                                            DateCreation = DateTime.Now
                                        },
                                    new User()
                                        {
+                                           Username = "username 1",
                                            DateCreation = DateTime.Today
                                        },
                                    new User()
