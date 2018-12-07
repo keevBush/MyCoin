@@ -12,6 +12,10 @@ namespace MyCoinData.Models
         public string Id { get; set; }
         [JsonProperty("user_name")]
         public string Username { get; set; }
+        [JsonProperty("fullname")]
+        public string Fullname { get; set; }
+        [JsonProperty("public_key")]
+        public string PublicKey { get; set; }
         [JsonProperty("password")]
         public string Password { get; set; }
         [JsonProperty("sold")]
