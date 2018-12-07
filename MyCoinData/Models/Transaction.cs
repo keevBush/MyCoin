@@ -12,6 +12,8 @@ namespace MyCoinData.Models
         public string PublcKeyDest { get; set; }//Key de Destination
         [JsonProperty("public_key_dest")]
         public string PublcProvKey { get; set; }//Key de provenance
+        [JsonProperty("libele")]
+        public string Libele { get; set; }//Key de provenance
         [JsonProperty("type")]
         public Type Type { get; set; }//le type de transfert
         [JsonProperty("etat")]
@@ -19,7 +21,7 @@ namespace MyCoinData.Models
         [JsonProperty("value")]
         public double Value { get; set; }//la valeur du transfert
 
-        private string _signature;
+        private string _signature= String.Empty;
         [JsonProperty("signature")]
         public string Signature //Signature de la transaction
         {
@@ -30,10 +32,10 @@ namespace MyCoinData.Models
             private set
             {
                 HashSignature();
-                this._signature = value;
             }
         }
 
+       
         private void HashSignature()
         {
             throw new NotImplementedException();
